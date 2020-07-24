@@ -8,6 +8,9 @@ router.get('/', function(req, res){
 router.get('/exercise', function(req, res){
     res.sendFile(path + '/public/exercise.html');
 })
+router.get('/stats', function(req,res){
+    res.sendFile(path + '/public/stats.html');
+})
 
 
 module.exports = router;
