@@ -19,6 +19,12 @@ async function updateWorkout(req, res){
     
 }
 
+async function addWorkout(req, res){
+    const newWorkout = await db.Workout.create({exercises:[]});
+    console.log(newWorkout); 
+    return res.json(newWorkout)
+}
+
 
 // get all workouts
 router.get('/workouts', getAllWorkouts)
@@ -29,5 +35,7 @@ router.put('/workouts/:id',updateWorkout)
 // get range
 
 router.get('/workouts/range', getAllWorkouts)
+
+router.post('/workouts',addWorkout )
 
 module.exports = router;
