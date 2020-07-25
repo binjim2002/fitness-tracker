@@ -1,16 +1,12 @@
 const router = require('express').Router();
 const db = require('../models');
 
-// get all workouts
-router.get('/workouts', function(req, res){
-    db.Workout.find().then(workouts=>{
-        res.json(workouts)
-    })
+async function getAllWorkouts(req, res){
+    let workouts = await db.Workout.find();
+    return res.json(workouts);
     
-})
-
-// update workout
-router.put('/workouts/:id',async function(req, res){
+}
+async function updateWorkout(req, res){
     // update existing workout
     try{
         const workout = await db.Workout.findOne({_id:req.params.id});
@@ -21,7 +17,17 @@ router.put('/workouts/:id',async function(req, res){
         res.status(500).json({msg: "Bad request"}).end();
     }
     
-})
+}
 
+
+// get all workouts
+router.get('/workouts', getAllWorkouts)
+
+// update workout
+router.put('/workouts/:id',updateWorkout)
+
+// get range
+
+router.get('/workouts/range', getAllWorkouts)
 
 module.exports = router;
