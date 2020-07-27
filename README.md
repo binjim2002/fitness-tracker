@@ -15,7 +15,7 @@ You will need to select new workout. Once you do that, you will then be prompt t
 
 To access The FITNESSTRACKER [CLICK HERE] https://github.com/binjim2002/fitness-tracker
 
-My heroku repo is: https://blooming-meadow-23336.herokuapp.com/
+My heroku repo is: https://shrouded-lowlands-21063.herokuapp.com/
 
 # Credits
 This app was designed and built by Jimmy B. Kazadi
